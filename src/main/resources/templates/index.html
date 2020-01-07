@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link href="/index.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>File Upload Tester</title>
+</head>
+<body>
+
+    <h1>File-Upload Test</h1>
+
+    <p> Hier kannst du ein File deiner Wahl hochladen</p>
+    <div>
+        <form action="upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="uploadfile" value="Durchsuchen">
+            <input type="submit" value="upload">
+        </form>
+
+    </div>
+
+    <h2>Alle Fotos die du hochgeladen hast</h2>
+
+    <span th:each="image : ${imageList}">
+        <img th:src="*{'data:image/jpeg;base64,'+image}"  class="rounded float-left kleinebilder" alt="" />
+    </span>
+
+
+
+
+</body>
+</html>

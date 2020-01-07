@@ -1,0 +1,8 @@
+.grid-container {
+    display: grid;
+}
+
+.kleinebilder {
+    width:60px;
+    height: 60px;
+}
